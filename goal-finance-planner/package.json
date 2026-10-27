@@ -1,0 +1,12 @@
+{
+  "name": "goal-finance-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "目標理財規劃:用 PMT、PV、FV 依理財目標試算",
+  "scripts": {
+    "test": "node tests/calc.test.js",
+    "dev": "npx wrangler pages dev public",
+    "deploy": "npx wrangler pages deploy public"
+  },
+  "license": "MIT"
+}

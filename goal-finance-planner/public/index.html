@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="選擇退休、購屋、教育等理財目標,用 PMT、PV、FV 算出每月存款、起始本金或到期金額。">
+<title>目標理財規劃</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="label">PMT · PV · FV 試算</p>
+    <h1>目標理財規劃</h1>
+    <p class="lede">先選一個要達成的目標,再決定要算每月存款、起始本金,還是照目前計畫能存到多少。畫面上的數字是範例,請改成你自己的條件。</p>
+  </header>
+
+  <section aria-label="選擇目標">
+    <div class="tabs" id="goalTabs" role="group" aria-label="理財目標"></div>
+    <p class="goal-desc" id="goalDesc"></p>
+  </section>
+
+  <section aria-label="選擇試算方式">
+    <p class="label" style="margin-bottom:8px">我想知道</p>
+    <div class="modes" id="modeBtns" role="group" aria-label="試算方式"></div>
+  </section>
+
+  <div class="grid">
+    <section class="panel" aria-label="條件設定">
+      <div id="inputs"></div>
+      <p class="hint">報酬率採固定年化、月複利(年利率 ÷ 12),與 Excel 的 PMT、PV、FV 函數算法一致。</p>
+    </section>
+
+    <section class="panel out" aria-label="試算結果" aria-live="polite">
+      <div id="headline"></div>
+      <dl class="strip" id="strip"></dl>
+      <ul class="notes" id="notes"></ul>
+      <div class="chart-box">
+        <div id="chart"></div>
+        <div class="legend">
+          <span><i></i>帳戶資產</span>
+          <span><i class="inv"></i>累計投入本金</span>
+          <span><i class="tg"></i>目標金額</span>
+        </div>
+      </div>
+      <div>
+        <h2>報酬率不同時會差多少</h2>
+        <div class="tbl" id="scen"></div>
+      </div>
+      <details>
+        <summary>逐年明細</summary>
+        <div class="tbl" id="sched"></div>
+      </details>
+      <details>
+        <summary>算式與 Excel 函數</summary>
+        <div id="formula"></div>
+      </details>
+    </section>
+  </div>
+
+  <section aria-label="三個函數的用途">
+    <h2>三個函數各解決什麼問題</h2>
+    <div class="explain">
+      <div><h3>PMT</h3><p>目標與時間已定,每期要存多少。適合「我要在 10 年後湊到頭期款」。</p></div>
+      <div><h3>PV</h3><p>未來要有一筆錢,現在要先準備多少。也用來算退休時需要多少退休金。</p></div>
+      <div><h3>FV</h3><p>照目前的本金與存款,到期會累積到多少。用來檢查計畫是否達標。</p></div>
+    </div>
+  </section>
+
+  <footer>本頁為試算工具,假設報酬率固定且每月準時存入,實際投資報酬會波動,不保證任何結果,也不構成投資或稅務建議。重大決定請諮詢合格的理財或財務顧問。</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
